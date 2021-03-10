@@ -24,11 +24,10 @@ public class CreateTextFile {
             System.err.println("Write permission denied. Terminating.");
             System.exit(1); // terminate the program
         }
-        catch(
-                FileNotFoundException fileNotFoundException)
+        catch(FileNotFoundException fileNotFoundException)
         {
             System.err.println("Error opening file. Terminating.");
-            System.exit(1); // terminate the program
+            System.exit(2); // terminate the program
         }
     }
     public static void addRecords()

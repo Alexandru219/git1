@@ -6,8 +6,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
-import java.util.Iterator;
-
 public class JsonDecodeDemo {
     public static void main(String[] args) {
         JSONParser parser = new JSONParser();
@@ -27,20 +25,22 @@ public class JsonDecodeDemo {
               System.out.println();
 
               JSONObject obj2 = (JSONObject) array.get(1);
+              System.out.println("Field \"1\"");
+              System.out.println(obj2.get("1"));
+////
+              JSONObject objN = (JSONObject) obj2.get("1");
+              System.out.println("Field \"2\"");
+              System.out.println(objN.get("2"));
+//
+              JSONObject obj3 = (JSONObject) objN.get("2");
               System.out.println("Field \"3\"");
-//              System.out.println(obj2.get("3"));
-
-              JSONObject objN = (JSONObject) obj2.get("3");
-              System.out.println(obj2.get("3"));
-
-//              JSONObject obj3 = (JSONObject) obj2.get(1);
+              System.out.println(obj3.get("3"));
 
 
-//              System.out.println(obj3.get("3"));
+              JSONObject obj4 = (JSONObject) obj3.get("3");
+              System.out.println("Field \"4\"");
+              System.out.println(obj4.get("4"));
 
-//            JSONObject obj3 = (JSONObject)obj2.get(1);
-//            System.out.println("Field \"1\"");
-//            System.out.println(obj3.containsKey("3"));
 
 //            s = "{}";
 //            obj = parser.parse(s);

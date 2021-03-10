@@ -1,15 +1,11 @@
 package com.testing.serialize;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.Formatter;
-import java.util.FormatterClosedException;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 
 public class CreateSequentialFile {
