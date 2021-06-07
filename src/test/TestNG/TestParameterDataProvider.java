@@ -4,8 +4,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestParameterDataProvider {
-    @Test(dataProvider = "provideNumbers")
-    public void testWithDataProvider(int number, int expected){
+    @Test(description = "test1", dataProvider = "provideNumbers")
+    public void test1(int number, int expected){
         Assert.assertEquals(number + 10, expected);
     }
 

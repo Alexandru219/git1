@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.Properties;
 
 public class TestDataProviderMap {
-    @Test(dataProvider = "dbConfig")
-    public void testConnection(Map<String, String> map){
+    @Test(description = "test1", dataProvider = "dbConfig")
+    public void test1(Map<String, String> map){
         for(Map.Entry<String,String> entry :map.entrySet()){
             System.out.println("[Key] : " + entry.getKey() +
                     "[Value] : "  + entry.getValue());
