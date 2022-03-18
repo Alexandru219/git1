@@ -1,12 +1,7 @@
 package XStreamJSon;
 
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
-
-import java.io.Writer;
 
 public class SerialProd {
     public static void main(String[] args) {
@@ -22,14 +17,6 @@ public class SerialProd {
         xstream.alias("Product", Product.class);
 
         System.out.println(xstream.toXML(product));
-
-//        String json = "{\"product\":{\"name\":\"Banana\",\"id\":123"
-//                + ",\"price\":23.0}}";
-//
-//        XStream xstream = new XStream(new JettisonMappedXmlDriver());
-//        xstream.alias("product", Product.class);
-//        Product product = (Product)xstream.fromXML(json);
-//        System.out.println(product.getPrice());
     }
 
 }

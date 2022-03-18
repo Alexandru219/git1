@@ -2,12 +2,12 @@ package XStreamJSon;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.File;
 
 public class Jackson2ex {
 
@@ -20,7 +20,7 @@ public class Jackson2ex {
         try {
 
             // Java objects to JSON file
-            mapper.writeValue(new File("staff5555.json"), staff);
+            mapper.writeValue(new File("staffGSon2022_2.json"), staff);
 
             // Java objects to JSON string - compact-print
             String jsonString = mapper.writeValueAsString(staff);
@@ -31,6 +31,7 @@ public class Jackson2ex {
             String jsonToString2 = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(staff);
             System.out.println(jsonToString2);
 
+            System.out.println("newStaff");
             String jsonInString = "{\"name\":\"John\",\"age\":38,\"position\":[\"Founder\",\"CEO\",\"Writer\"],\"skills\":[\"java\",\"python\",\"nodeJS\",\"kotlin\"],\"salary\":{\"2018\":14000,\"2012\":12000,\"2010\":10000}}";
             Staff newStaff = mapper.readValue(jsonInString, Staff.class);
 

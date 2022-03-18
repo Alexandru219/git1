@@ -19,10 +19,10 @@ public class GsonSerialize {
         // Java objects to String
          String json = gson.toJson(staff);
         System.out.println(json);
-        System.out.println(staff.toString());
+        System.out.println(staff);
 
         // Java objects to File
-        try (FileWriter writer = new FileWriter("staffGSon2.json")) {
+        try (FileWriter writer = new FileWriter("staffGSon2022.json")) {
             gson.toJson(staff, writer);
         } catch (IOException e) {
             e.printStackTrace();
