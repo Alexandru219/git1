@@ -1,6 +1,8 @@
 package selenium;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,18 +17,22 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class DemoTours {
+    private static final Logger logger = Logger.getLogger(DemoTours.class);
     @Test
     public void test() {
         WebDriver driver = new FirefoxDriver();
         FirefoxOptions options = new FirefoxOptions();
+        DOMConfigurator.configure("log4j.xml");
         options.addArguments("--start-maximized");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //wait before each element
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.get("http://demo.guru99.com/test/newtours/");
+        logger.info("[KALINA] loading page");
         Assert.assertEquals(driver.getTitle(), "Welcome: Mercury Tours");
 
         WebElement registerLink = driver.findElement(By.xpath("//a[contains(text(),'REGISTER')]"));
         registerLink.click();
+        logger.debug("[KALINA] clicked link");
 
         Assert.assertTrue(driver.findElement(By.xpath("//img[@src='images/mast_register.gif']")).isDisplayed());
 
