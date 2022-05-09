@@ -6,7 +6,6 @@ public class GitClass {
 
     int a;
     int b;
-    int v;
     int c;
 
     int d;
